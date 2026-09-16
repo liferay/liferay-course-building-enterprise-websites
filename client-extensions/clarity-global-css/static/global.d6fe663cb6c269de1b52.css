@@ -113,6 +113,11 @@ body{
 
 a {
     text-decoration: none !important;
+    color: var(--primary);
+}
+
+a:hover {
+    color: var(--primary);
 }
 
 .list-menu ul {
