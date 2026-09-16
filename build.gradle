@@ -2,9 +2,13 @@
 
 tasks.named('initBundle').configure {
     doLast {
-        def es7Dir = new File("${rootProject.projectDir}/bundles/data/elasticsearch7")
-        if (es7Dir.exists()) {
-            delete(es7Dir)
+        def dataDir = new File("${rootProject.projectDir}/bundles/data")
+        if (dataDir.exists()) {
+            dataDir.listFiles({ File f ->
+                f.directory && f.name.startsWith("elasticsearch")
+            } as FileFilter).each { esDir ->
+                delete(esDir)
+            }
         }
         def stateDir = new File("${rootProject.projectDir}/bundles/osgi/state")
         if (stateDir.exists()) {
@@ -12,4 +16,3 @@ tasks.named('initBundle').configure {
         }
     }
 }
-
