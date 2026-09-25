@@ -4560,6 +4560,32 @@
                             "type": "String"
                         },
                         {
+                            "defaultValue": "var(--condensed-form-input-background-color)",
+                            "editorType": "ColorPicker",
+                            "label": "Condensed Form Input Border Color",
+                            "mappings": [
+                                {
+                                    "type": "cssVariable",
+                                    "value": "condensed-form-input-border-color"
+                                }
+                            ],
+                            "name": "condensedFormInputBorderColor",
+                            "type": "String"
+                        },
+                        {
+                            "defaultValue": "var(--condensed-form-input-background-color-disabled)",
+                            "editorType": "ColorPicker",
+                            "label": "Condensed Form Input Border Color Disabled",
+                            "mappings": [
+                                {
+                                    "type": "cssVariable",
+                                    "value": "condensed-form-input-border-color-disabled"
+                                }
+                            ],
+                            "name": "condensedFormInputBorderColorDisabled",
+                            "type": "String"
+                        },
+                        {
                             "defaultValue": "var(--color-neutral-5)",
                             "editorType": "ColorPicker",
                             "label": "condensed-form-input-filled-border-color",
