@@ -1,7 +1,7 @@
 <div class="component-button text-break">
     <a
         class="btn"
-        href="${configuration.link}"
+        href="${configuration.link!""}"
         id="fragment-${fragmentEntryLinkNamespace}-link"
     >
         <span style="font-size: ${configuration.iconSize}">
