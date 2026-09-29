@@ -1,18 +1,27 @@
 <style>
 	.clarity-bento .card {
-		background-color: #faf9f6;
+		background-color: var(--color-brand-secondary-lighten-6);
 		border: 0;
-		border-radius: 0.5rem;
+		border-radius: var(--card-border-radius);
 		overflow: hidden;
 	}
 
 	.clarity-bento .card-img-top {
-		height: 20rem;
+		height: 25rem;
 		object-fit: cover;
 	}
 
 	.clarity-bento .card-body {
-		padding: 2rem 1.25rem;
+		padding: var(--spacer-6) var(--spacer-4);
+	}
+
+	.clarity-bento .card-title {
+		font-size: var(--h2-font-size);
+	}
+
+	.clarity-bento .card-title,
+	.clarity-bento .card-body p {
+		margin-bottom: var(--spacer-3);
 	}
 </style>
 
