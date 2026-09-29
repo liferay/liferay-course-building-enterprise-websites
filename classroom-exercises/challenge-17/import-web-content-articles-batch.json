@@ -69,14 +69,14 @@
         "contentFields": [
             {
                 "contentFieldValue": {
-                    "data": "<p>As we step into 2024, eyewear trends are evolving with new styles and designs. Oversized sunglasses are making a comeback, offering both fashion and UV protection. Clear frame glasses continue to be popular for a minimalist look, while bold colored frames are also gaining attention. Blue light blocking glasses are becoming a necessity in the digital age, protecting eyes from screen-induced strain. With sustainable fashion on the rise, eco-friendly eyewear materials like bamboo and recycled plastics are becoming more prevalent.</p>"
+                    "data": "<p>As we step into 2027, eyewear trends are evolving with new styles and designs. Oversized sunglasses are making a comeback, offering both fashion and UV protection. Clear frame glasses continue to be popular for a minimalist look, while bold colored frames are also gaining attention. Blue light blocking glasses are becoming a necessity in the digital age, protecting eyes from screen-induced strain. With sustainable fashion on the rise, eco-friendly eyewear materials like bamboo and recycled plastics are becoming more prevalent.</p>"
                 },
                 "fieldReference": "content",
                 "name": "content"
             },
             {
                 "contentFieldValue": {
-                    "data": "<p>2024 Eyewear Trends: What's In and What's Out</p>"
+                    "data": "<p>2027 Eyewear Trends: What's In and What's Out</p>"
                 },
                 "fieldReference": "headline",
                 "name": "headline"
@@ -95,7 +95,7 @@
         ],
         "contentStructureId": 33777,
         "structuredContentFolderId": 33753,
-        "title": "Exploring the Latest Eyewear Trends for 2024",
+        "title": "Exploring the Latest Eyewear Trends for 2027",
         "viewableBy": "Anyone"
     }
 ]
