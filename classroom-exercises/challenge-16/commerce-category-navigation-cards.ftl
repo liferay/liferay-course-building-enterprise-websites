@@ -1,50 +1,74 @@
-<div class="row widget-mode-card">
-    <#if entries?has_content>
-        <#list entries as currentCategory>
-            <#assign
-                categoryId = currentCategory.getCategoryId()
-                categoryName = currentCategory.getName()
-                categoryHref = cpAssetCategoriesNavigationDisplayContext
-                .getFriendlyURL(currentCategory.getCategoryId(), themeDisplay)
-								propertyName = "alphaCode"
-            />
+<style>
+	.clarity-bento .card {
+		background-color: #faf9f6;
+		border: 0;
+		border-radius: 0.5rem;
+		overflow: hidden;
+	}
 
-            <#if cpAssetCategoriesNavigationDisplayContext.getDefaultImageSrc(categoryId)??>
-                <#assign cardImage = true />
-            <#else>
-                <#assign cardImage = false />
-            </#if>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        <#if cardImage>
-                            <div class="aspect-ratio aspect-ratio-8-to-3">
-                                <a href="${categoryHref}">${categoryName}
-                                    <img alt="thumbnail" class="aspect-ratio-item-center-middle aspect-ratio-item-fluid"
-                                        src="${cpAssetCategoriesNavigationDisplayContext.getDefaultImageSrc(categoryId)}">
-                                </a>
-                            </div>
-                        </#if>
-                    </div>
-                    <div class="card-body widget-topbar">
-                        <div class="autofit-row card-title">
-                                <div class="autofit-col autofit-col-expand">
-                                    <h3 class="title">
-                                        <a class="title-link" href="${categoryHref}">${categoryName}</a>
-                                    </h3>
-                                </div>
-                        </div>
-                        <#if validator.isNotNull(currentCategory.getDescription())>
-                            <#assign content = currentCategory.getDescription() />
-                            <#if cardImage>
-                                <p class="widget-resume">${stringUtil.shorten(htmlUtil.stripHtml(content), 150)}</p>
-                            <#else>
-                                <p class="widget-resume">${stringUtil.shorten(htmlUtil.stripHtml(content), 400)}</p>
-                            </#if>
-                        </#if>
-                    </div>
-                </div>
-            </div>
-        </#list>
-    </#if>
-</div>
+	.clarity-bento .card-img-top {
+		height: 20rem;
+		object-fit: cover;
+	}
+
+	.clarity-bento .card-body {
+		padding: 2rem 1.25rem;
+	}
+</style>
+
+<#if entries?has_content>
+	<#assign
+		categoryImages = {
+			"Contacts": "/documents/d/asset-library-32687/contacts",
+			"Eyeglasses": "/documents/d/asset-library-32687/eyeglasses",
+			"Lenses": "/documents/d/asset-library-32687/lenses",
+			"Sunglasses": "/documents/d/asset-library-32687/sunglasses"
+		}
+		categoryOrder = ["Eyeglasses", "Sunglasses", "Contacts", "Lenses"]
+		orderedCategories = []
+		widths = [8, 4, 4, 8]
+	/>
+
+	<#list categoryOrder as orderName>
+		<#list entries as entry>
+			<#if entry.getName() == orderName>
+				<#assign orderedCategories = orderedCategories + [entry] />
+			</#if>
+		</#list>
+	</#list>
+
+	<#list entries as entry>
+		<#if !categoryOrder?seq_contains(entry.getName())>
+			<#assign orderedCategories = orderedCategories + [entry] />
+		</#if>
+	</#list>
+
+	<div class="clarity-bento row">
+		<#list orderedCategories as currentCategory>
+			<#assign
+				categoryHref = cpAssetCategoriesNavigationDisplayContext.getFriendlyURL(currentCategory.getCategoryId(), themeDisplay)
+				categoryName = currentCategory.getTitle(locale)
+				description = currentCategory.getDescription(locale)
+				imageSrc = categoryImages[currentCategory.getName()]!""
+			/>
+
+			<div class="col-lg-${widths[currentCategory?index % 4]} mb-4">
+				<div class="card h-100">
+					<#if imageSrc?has_content>
+						<img alt="${categoryName}" class="card-img-top" src="${imageSrc}" />
+					</#if>
+
+					<div class="card-body">
+						<h3 class="card-title">${categoryName}</h3>
+
+						<#if description?has_content>
+							<p>${htmlUtil.stripHtml(description)}</p>
+						</#if>
+
+						<a class="btn btn-primary btn-sm" href="${categoryHref}">Explore</a>
+					</div>
+				</div>
+			</div>
+		</#list>
+	</div>
+</#if>
