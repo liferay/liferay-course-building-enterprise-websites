@@ -1,12 +1,13 @@
+@use "sass:math";
 $dialect-custom-properties: () !default;
 $dialect-custom-properties: map-deep-merge(
 	(
 		--aspect-ratio-1: 100%,
-		--aspect-ratio-2: calc(3 / 4 * 100%),
-		--aspect-ratio-3: calc(2 / 3 * 100%),
-		--aspect-ratio-4: calc(5 / 8 * 100%),
-		--aspect-ratio-5: calc(9 / 16 * 100%),
-		--aspect-ratio-6: calc(1 / 2 * 100%),
+		--aspect-ratio-2: calc(math.div(3, 4) * 100%),
+		--aspect-ratio-3: calc(math.div(2, 3) * 100%),
+		--aspect-ratio-4: calc(math.div(5, 8) * 100%),
+		--aspect-ratio-5: calc(math.div(9, 16) * 100%),
+		--aspect-ratio-6: calc(math.div(1, 2) * 100%),
 		--blockquote-font-size: 1.25rem,
 		--blockquote-small-color: var(--color-neutral-6),
 		--blockquote-small-font-size: 80%,

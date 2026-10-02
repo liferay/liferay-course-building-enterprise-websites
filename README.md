@@ -22,16 +22,16 @@ Here are some instructions to prepare your environment to start your local Lifer
     git fetch origin
     ```
 
-1. Checkout the master branch.
+1. Checkout the main branch.
 
     ```
-    git checkout master
+    git checkout main
     ```
 
-1. To ensure you have the most recent content for master branch, run the following command.
+1. To ensure you have the most recent content for the main branch, run the following command.
 
     ```
-    git pull origin master
+    git pull origin main
     ```
 
 1. In the terminal, navigate to the root folder of the repository and run the following command.

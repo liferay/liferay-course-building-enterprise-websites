@@ -2,9 +2,9 @@ package com.liferay.enablement.sleeper.context.contributor;
 
 import com.liferay.portal.kernel.template.TemplateContextContributor;
 
-import java.util.Map;
-
 import jakarta.servlet.http.HttpServletRequest;
+
+import java.util.Map;
 
 import org.osgi.service.component.annotations.Component;
 
