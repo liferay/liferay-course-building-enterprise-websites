@@ -23,7 +23,7 @@
 	osgi.service;objectClass:List<String>='com.liferay.portal.kernel.uuid.PortalUUID',\
 	osgi.service;objectClass:List<String>='com.liferay.portal.kernel.xml.SAXReader',\
 	osgi.service;objectClass:List<String>='com.liferay.portal.kernel.zip.ZipReaderFactory',\
-	osgi.service;objectClass:List<String>='javax.servlet.ServletContext',\
+	osgi.service;objectClass:List<String>='jakarta.servlet.ServletContext',\
 	osgi.service;objectClass:List<String>='javax.sql.DataSource',\
 	osgi.wiring.package;osgi.wiring.package=com.sun.nio.file
 -runrequires: osgi.identity;filter:='(osgi.identity=${project.bundle.Bundle-SymbolicName})'

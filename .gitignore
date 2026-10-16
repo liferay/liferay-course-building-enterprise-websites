@@ -9,7 +9,7 @@ gradle-local.properties
 /build/
 /.gradle/
 
-**/elasticsearch7
+**/elasticsearch*
 **/.DS_Store
 **/build
 **/dist
