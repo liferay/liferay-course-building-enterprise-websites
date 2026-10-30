@@ -1,41 +1,67 @@
 {
-    "fieldSets": [
+  "fieldSets": [
+    {
+      "fields": [
         {
-            "fields": [
-                {
-                    "dataType": "string",
-                    "defaultValue": "search",
-                    "label": "icon-name",
-                    "name": "iconName",
-                    "type": "text"
-                },
-                {
-                    "dataType": "string",
-                    "defaultValue": "1rem",
-                    "label": "icon-size",
-                    "name": "iconSize",
-                    "type": "select",
-                    "typeOptions": {
-                        "validValues": [
-                            {
-                                "value": "1rem"
-                            },
-                            {
-                                "value": "1.5rem"
-                            },
-                            {
-                                "value": "2rem"
-                            },
-                            {
-                                "value": "2.5rem"
-                            },
-                            {
-                                "value": "3rem"
-                            }
-                        ]
-                    }
-                }
+          "dataType": "string",
+          "defaultValue": "search",
+          "label": "icon-name",
+          "name": "iconName",
+          "type": "text"
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "1rem",
+          "label": "icon-size",
+          "name": "iconSize",
+          "type": "select",
+          "typeOptions": {
+            "validValues": [
+              {
+                "value": "1rem"
+              },
+              {
+                "value": "1.5rem"
+              },
+              {
+                "value": "2rem"
+              },
+              {
+                "value": "2.5rem"
+              },
+              {
+                "value": "3rem"
+              }
             ]
+          }
+        },
+        {
+            "label": "Link",
+            "name": "link",
+            "type": "url"
+        },
+        {
+          "name": "hideLabel",
+          "label": "Hide Label",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "dataType": "string",
+          "defaultValue": "Search",
+          "label": "label",
+          "name": "buttonLabel",
+          "type": "text",
+          "typeOptions": {
+            "dependency": {
+            "hideLabel": {
+                "type": "equal",
+                "value": "false"
+                }
+            }
+          }
         }
-    ]
+      ]
+    }
+  ]
 }
